@@ -1,0 +1,21 @@
+[submodule "navigation"]
+	path = mrrtpe/navigation
+	url = git@github.com:gajena/navigation.git
+[submodule "catkin_simple"]
+	path = mrrtpe/catkin_simple
+	url = git@github.com:catkin/catkin_simple.git
+[submodule "mav_comm"]
+	path = mrrtpe_simulation/mav_comm
+	url = git@github.com:ethz-asl/mav_comm.git
+[submodule "mav_control_rw"]
+	path = mrrtpe_simulation/mav_control_rw
+	url = git@github.com:gajena/mav_control_rw.git
+[submodule "mavlink-gbp-release"]
+	path = mrrtpe_simulation/mavlink-gbp-release
+	url = git@github.com:mavlink/mavlink-gbp-release.git
+[submodule "rotors_simulator"]
+	path = mrrtpe_simulation/rotors_simulator
+	url = git@github.com:gajena/rotors_simulator.git
+[submodule "husky"]
+	path = mrrtpe_simulation/husky
+	url = git@github.com:gajena/husky.git
