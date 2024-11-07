@@ -1,0 +1,39 @@
+<launch>
+    <arg name="robot_name"/>
+    <arg name="init_pose"/>
+    
+    <param name="robot_description" command="$(find xacro)/xacro '$(find husky_description)/urdf/husky.urdf.xacro'
+            robot_namespace:=$(arg robot_name)" />
+    <rosparam file="$(find ugv_state_machine)/params/debug.yaml" command="load" ns="ugv_state_machine" />
+    <node name="spawn_husky_model" pkg="gazebo_ros" type="spawn_model" args="$(arg init_pose)
+              -urdf
+              -unpause
+              -param robot_description
+              -model $(arg robot_name)
+    " />
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/>
+
+    <rosparam command="load" file="$(find drdo_simulation)/params/husky/control.yaml" />
+    <node name="base_controller_spawner" pkg="controller_manager" type="spawner" args="husky_joint_publisher husky_velocity_controller" />
+    <param name="husky_velocity_controller/base_frame_id" value="$(arg robot_name)/base_link" />
+    <rosparam param="wheel_radius_multiplier" ns="husky_velocity_controller" subst_value="True">
+            $(optenv HUSKY_WHEEL_MULTIPLIER 1.0)
+        </rosparam>
+
+    <node pkg="fake_battery" type="fake_battery_node" name="fake_battery_node">
+        <param name="max_voltage" value="25.2" />
+        <param name="drain_factor" value="0.009" />
+        <remap from="odom" to="ground_truth/odometry" />
+    </node>
+
+    <include file="$(find drdo_simulation)/launch/move_base_ugv.launch" >
+        <arg name="robot_name" value="$(arg robot_name)"/> 
+    </include>
+
+    <node pkg="ugv_state_machine" type="ugv_state_machine_node" name="ugv_state_machine" output="screen">
+        <remap from="odometry" to="ground_truth/odometry" />
+        <remap from="mrrp_plan" to="/mrrp_plan" />
+        <remap from="robot_state" to="/robots"/>
+        <rosparam file="$(find drdo_simulation)/params/state_machine/$(arg robot_name)/state_machine.yaml" command="load" ns="" />
+    </node>
+</launch>

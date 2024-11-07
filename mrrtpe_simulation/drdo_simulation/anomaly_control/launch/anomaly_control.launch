@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- http://wiki.ros.org/rosconsole#Console_Output_Formatting -->
+    <env name="ROSCONSOLE_FORMAT" value="[${severity}][${node}][${file}]:${line}: ${message} "/>
+    <!-- <env name="ROSCONSOLE_FORMAT" value="[${severity}][${node}]: ${message} "/> -->
+    <node pkg="anomaly_control" type="anomaly_control_node" name="anomaly_control_node" output="screen">
+        <param name="waypoint_file_name" value="$(find anomaly_control)/params/waypoints.yaml" />
+        <rosparam file="$(find anomaly_control)/params/costmap.yaml" command="load" ns="costmap" />
+    </node>
+
+    <!-- <node name="spawn_standing_1" pkg="gazebo_ros" type="spawn_model" args="
+              -sdf
+              -file $(find anomaly_control)/models/person_standing/model.sdf
+              -model person_standing_1
+              -x 1.5
+              -y 9.5
+    " /> -->
+
+    <!-- <node name="spawn_standing_2" pkg="gazebo_ros" type="spawn_model" args="
+              -sdf
+              -file $(find anomaly_control)/models/person_standing/model.sdf
+              -model person_standing_2
+              -x 12.9
+              -y 18.6
+    " /> -->
+
+    <node name="spawn_walking_1" pkg="gazebo_ros" type="spawn_model" args="
+              -sdf
+              -file $(find anomaly_control)/models/person_walking/model.sdf
+              -model person_walking_1
+              -x -2
+              -y -2
+    " />
+</launch>

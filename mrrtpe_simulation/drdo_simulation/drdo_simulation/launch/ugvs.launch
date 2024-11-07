@@ -1,0 +1,28 @@
+<launch>
+  <!-- BEGIN ROBOT 1-->
+  <group ns="ugv_1">
+    <param name="tf_prefix" value="ugv_1" />
+    <include file="$(find drdo_simulation)/launch/ugv.launch" >
+      <!-- <arg name="init_pose" value="-x 11 -y 13 -z 0 -Y 0" /> -->
+      <arg name="init_pose" value="-x 11.5 -y 17.5 -z 0 -Y 0" />
+      <arg name="robot_name"  value="ugv_1" />
+    </include>
+  </group>
+  <!-- BEGIN ROBOT 2-->
+  <group ns="ugv_2">
+    <param name="tf_prefix" value="ugv_2" />
+    <include file="$(find drdo_simulation)/launch/ugv.launch" >
+      <!-- <arg name="init_pose" value="-x 15 -y 13 -z 0 -Y 0" /> -->
+      <arg name="init_pose" value="-x 9.5 -y 17.5 -z 0 -Y 0" />
+      <arg name="robot_name"  value="ugv_2" />
+    </include>
+  </group>
+  <!-- BEGIN ROBOT 3-->
+  <!-- <group ns="ugv_3">
+    <param name="tf_prefix" value="ugv_3" />
+    <include file="$(find drdo_simulation)/launch/ugv.launch" >
+      <arg name="init_pose" value="-x 6.5 -y 10.5 -z 0 -Y -1.57" />
+      <arg name="robot_name"  value="ugv_3" />
+    </include>
+  </group> -->
+</launch>

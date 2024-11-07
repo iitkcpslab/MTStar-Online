@@ -1,0 +1,80 @@
+<launch>
+
+  <arg name="mav_name" default="firefly" />
+  <arg name="namespace" default="$(arg mav_name)" />
+  <arg name="mav_type" default="firefly" />
+  <arg name="x" default="-4.0" />
+  <arg name="y" default="4.0" />
+  <arg name="z" default="0.1" />
+
+  <!-- BEGIN ROBOT 1-->
+  <group ns="mav_1">
+    <param name="tf_prefix" value="mav_1" />
+    <include file="$(find drdo_simulation)/launch/mav.launch" >
+      <arg name="x" default="-4.0" />
+      <arg name="y" default="4.0" />
+      <arg name="z" default="0.1" />
+      <arg name="namespace" value="mav_1" />
+      <arg name="mav_type" value="$(arg mav_type)" />
+    </include>
+    <node name="hovering_example" pkg="rotors_gazebo" type="hovering_example" output="screen">
+      <!-- <param name="x" value="1" />
+      <param name="y" value="1" /> -->
+      <param name="x" value="7.5" />
+      <param name="y" value="17.5" />
+      <param name="z" value="5.0" />
+    </node>
+  </group>
+<?ignore
+  <!-- BEGIN ROBOT 2 -->
+  <group ns="mav_2">
+    <param name="tf_prefix" value="mav_2" />
+    <include file="$(find drdo_simulation)/launch/mav.launch" >
+      <arg name="x" default="24.0" />
+      <arg name="y" default="23.0" />
+      <arg name="z" default="0.1" />
+      <arg name="namespace" value="mav_2" />
+      <arg name="mav_type" value="$(arg mav_type)" />
+    </include>
+    <node name="hovering_example" pkg="rotors_gazebo" type="hovering_example" output="screen">
+      <param name="x" value="0.5" />
+      <param name="y" value="19.5" />
+      <param name="z" value="5.0" />
+    </node>
+  </group>
+
+  <!-- BEGIN ROBOT 3-->
+  <group ns="mav_3">
+    <param name="tf_prefix" value="mav_3" />
+    <include file="$(find drdo_simulation)/launch/mav.launch">
+      <arg name="x" default="22.0" />
+      <arg name="y" default="23.0" />
+      <arg name="z" default="0.1" />
+      <arg name="namespace" value="mav_3" />
+      <arg name="mav_type" value="$(arg mav_type)" />
+    </include>
+    <node name="hovering_example" pkg="rotors_gazebo" type="hovering_example" output="screen">
+      <param name="x" value="19.5" />
+      <param name="y" value="0.5" />
+      <param name="z" value="5.0" />
+    </node>
+  </group>
+
+  <!-- BEGIN ROBOT 4-->
+  <group ns="mav_4">
+    <param name="tf_prefix" value="mav_4" />
+    <include file="$(find drdo_simulation)/launch/mav.launch">
+      <arg name="x" default="23.0" />
+      <arg name="y" default="23.0" />
+      <arg name="z" default="0.1" />
+      <arg name="namespace" value="mav_4" />
+      <arg name="mav_type" value="$(arg mav_type)" />
+    </include>
+    <node name="hovering_example" pkg="rotors_gazebo" type="hovering_example" output="screen">
+      <param name="x" value="19.5" />
+      <param name="y" value="19.5" />
+      <param name="z" value="5.0" />
+    </node>
+  </group>
+  ?>
+</launch>

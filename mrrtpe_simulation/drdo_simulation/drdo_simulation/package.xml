@@ -1,0 +1,27 @@
+<package format="2">
+    <name>drdo_simulation</name>
+    <version>0.0.1</version>
+    <description>drdo simulation env.</description>
+
+    <maintainer email="example@example.com">Gajendra Nagar</maintainer>
+    <maintainer email="example@example.com">Rohit</maintainer>
+
+    <license>none</license>
+
+    <!-- Dependencies which this package needs to build itself. -->
+    <buildtool_depend>catkin</buildtool_depend>
+    <buildtool_depend>catkin_simple</buildtool_depend>
+
+    <!-- Dependencies needed after this package is compiled. -->
+    <exec_depend>rotors_simulator</exec_depend>
+    <exec_depend>mav_lowlevel_attitude_controller</exec_depend>
+    <exec_depend>mav_nonlinear_mpc</exec_depend>
+    <exec_depend>fake_battery</exec_depend>
+    <exec_depend>anomaly_control</exec_depend>
+    <exec_depend>controller_manager</exec_depend>
+    <exec_depend>husky_description</exec_depend>
+    <exec_depend>mrrp</exec_depend>
+    <exec_depend>ugv_state_machine</exec_depend>
+    <exec_depend>move_base</exec_depend>
+    <exec_depend>map_server</exec_depend>
+</package>

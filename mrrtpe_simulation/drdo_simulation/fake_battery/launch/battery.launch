@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="drdo_simulation" type="fake_battery_node" name="fake_battery_node" output="screen">
+        <param name="max_voltage" value="25.2"/>
+        <param name="drain_factor" value="0.009" />
+    </node>
+</launch>

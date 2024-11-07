@@ -1,0 +1,15 @@
+[submodule "mav_comm"]
+	path = mav_comm
+	url = git@github.com:ethz-asl/mav_comm.git
+[submodule "mav_control_rw"]
+	path = mav_control_rw
+	url = git@github.com:gajena/mav_control_rw.git
+[submodule "mavlink-gbp-release"]
+	path = mavlink-gbp-release
+	url = git@github.com:mavlink/mavlink-gbp-release.git
+[submodule "rotors_simulator"]
+	path = rotors_simulator
+	url = git@github.com:gajena/rotors_simulator.git
+[submodule "husky"]
+	path = husky
+	url = git@github.com:gajena/husky.git

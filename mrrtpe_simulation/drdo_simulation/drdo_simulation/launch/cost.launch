@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+    <group ns="ugv_1">
+        <node pkg="costmap_converter" type="standalone_converter" name="standalone_converter">
+            <remap from="/move_base/local_costmap/costmap" to="occ2" />
+            <param name="cluster_max_distance" value="0.05"/>
+            <param name="cluster_min_pts" value="20"/>
+            <param name="cluster_max_pts" value="30"/>
+            <param name="convex_hull_min_pt_separation" value="0.0"/>
+            <!-- <remap from="/move_base/local_costmap/costmap_updates" to="move_base/global_costmap/costmap_updates" /> -->
+        </node>
+    </group>
+</launch>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+    <group ns="mav_1">
+        
+        <node pkg="mav_move_base" type="mav_move_base_node" name="mav_move_base" output="screen">
+            
+        </node>
+    </group>
+</launch>

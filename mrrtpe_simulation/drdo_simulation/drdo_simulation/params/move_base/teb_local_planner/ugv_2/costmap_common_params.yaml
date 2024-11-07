@@ -1,0 +1,29 @@
+map_type: costmap
+origin_z: 0.0
+z_resolution: 1
+z_voxels: 2
+
+obstacle_range: 4.0
+raytrace_range: 4.0
+
+publish_voxel_map: false
+transform_tolerance: 0.5
+meter_scoring: true
+
+footprint: [[-0.47, -0.35], [-0.47, 0.35], [0.47, 0.35], [0.47, -0.35]]
+footprint_padding: 0.02
+
+# plugins:
+# - {name: static_layer, type: costmap_2d::StaticLayer}
+# - {name: obstacles_layer, type: "costmap_2d::ObstacleLayer"}
+# - {name: inflater_layer, type: "costmap_2d::InflationLayer"}
+# # - {name: obstacle_extractor_layer, type: "mrrtpe::ObstacleExtractorLayer"}
+
+# obstacles_layer:
+#   observation_sources: scan1 scan2
+#   scan1: {sensor_frame: ugv_2/front_laser, data_type: LaserScan, topic: scan, marking: true, clearing: true, 
+#           min_obstacle_height: -2.0, max_obstacle_height: 2.0, obstacle_range: 4.0, raytrace_range: 5.0, 
+#           expected_update_rate: 5.0, observation_persistence: 4.0}
+#   scan2: {sensor_frame: ugv_2/rear_laser, data_type: LaserScan, topic: bumper/scan, marking: true, clearing: true, 
+#           min_obstacle_height: -2.0, max_obstacle_height: 2.0, obstacle_range: 1.0, raytrace_range: 1.5, 
+#           expected_update_rate: 5.0, observation_persistence: 4.0}

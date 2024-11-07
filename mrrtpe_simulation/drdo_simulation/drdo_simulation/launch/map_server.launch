@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- <arg name="map_file" default="$(find drdo_simulation)/maps/ws_11x11x2_m2.yaml" /> -->
+    <arg name="map_file" default="$(find drdo_simulation)/maps/use_case_2.yaml" />
+    <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" >
+        <param name="frame_id" value="world" />
+    </node>
+</launch>
+<!--ws1: ws_11x11x2_m2.yaml
+    ws2: use_case_2 -->

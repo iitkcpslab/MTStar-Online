@@ -1,0 +1,13 @@
+vehicle_type: 4
+max_voltage: 25.2
+critical_low_voltage: 22.2
+low_voltage: 23.4
+search_anomaly_retry: 4
+lost_anomaly_timeout: 10.0
+anomaly_poll_time: 0.5
+poll_rate: 5.0
+
+Idle:
+  x: 1.5
+  y: 1.5
+  yaw: 0.0
