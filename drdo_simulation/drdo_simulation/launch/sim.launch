@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<launch>
+    <param name="/use_sim_time" value="true" />
+    <arg name="debug" default="false" />
+    <arg name="gui" default="true" />
+    <arg name="paused" default="false" />
+    <arg name="verbose" default="true" />\
+
+    <!-- http://wiki.ros.org/rosconsole#Console_Output_Formatting -->
+    <env name="ROSCONSOLE_FORMAT" value="[${severity}][${node}] ${message}" />
+    <!-- <env name="ROSCONSOLE_FORMAT" value="[${file}:${line}] ${message}" /> -->
+
+    <env name="GAZEBO_MODEL_PATH" value="${GAZEBO_MODEL_PATH}:$(find rotors_gazebo)/models" />
+    <env name="GAZEBO_RESOURCE_PATH" value="${GAZEBO_RESOURCE_PATH}:$(find rotors_gazebo)/models" />
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <!-- <arg name="world_name" value="$(find drdo_simulation)/worlds/use_case1.2.world" /> -->
+        <arg name="world_name" value="$(find drdo_simulation)/worlds/use_case2_4.2.world" />
+        <arg name="debug" value="$(arg debug)" />
+        <arg name="paused" value="$(arg paused)" />
+        <arg name="gui" value="$(arg gui)" />
+        <arg name="verbose" value="$(arg verbose)" />
+    </include>
+
+    <include file="$(find drdo_simulation)/launch/ugvs.launch" />
+    <include file="$(find drdo_simulation)/launch/mavs.launch"/>
+    <include file="$(find drdo_simulation)/launch/map_server.launch" />
+    <include file="$(find drdo_simulation)/launch/rviz.launch" />
+    <include file="$(find anomaly_control)/launch/anomaly_control.launch" />
+    <include file="$(find mrrp)/launch/mrrp.launch" />
+</launch>

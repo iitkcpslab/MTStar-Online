@@ -1,0 +1,6 @@
+image: 20x20.pgm
+resolution: 0.020000
+origin: [-9.65, -9.55, 0.000000]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196

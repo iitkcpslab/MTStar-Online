@@ -1,0 +1,21 @@
+<package format="2">
+    <name>mav_move_base</name>
+    <version>0.0.0</version>
+    <description>mav_move_base.</description>
+
+    <maintainer email="example@example.com">Gajendra Nagar</maintainer>
+    <maintainer email="example@example.com">Rohit</maintainer>
+
+    <license>none</license>
+
+    <!-- Dependencies which this package needs to build itself. -->
+    <buildtool_depend>catkin</buildtool_depend>
+    <buildtool_depend>catkin_simple</buildtool_depend>
+
+    <!-- Dependencies needed after this package is compiled. -->
+    <depend> roscpp </depend>
+    <depend> nav_msgs </depend>
+    <depend>mrrtpe_utils</depend>
+    <depend>actionlib</depend>
+    <depend>move_base_msgs</depend>
+</package>

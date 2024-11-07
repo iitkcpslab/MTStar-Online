@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+    <group ns="ugv_1">
+        <node pkg="costmap_2d" type="costmap_2d_node" name="costmap_2d_node">
+            <rosparam file="$(find drdo_simulation)/params/move_base/teb_local_planner/ugv_1/costmap_common_params.yaml" command="load" ns="costmap" />
+            <rosparam file="$(find drdo_simulation)/params/move_base/teb_local_planner/ugv_1/odom_nav_params/global_costmap_params.yaml" command="load" />
+            <param name="global_frame" value="a" />
+        </node>
+    </group>
+</launch>
