@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+    <group ns="ugv_1">
+        
+        <node pkg="ugv_state_machine" type="ugv_state_machine_node" name="ugv_state_machine" output="screen"> launch-prefix="gdb -ex run --args">
+            <remap from="odometry" to="ground_truth/odometry" />
+            <remap from="scan" to="scan" />
+            <rosparam file="$(find ugv_state_machine)/params/debug.yaml" command="load" ns="" />
+        </node>
+    </group>
+</launch>

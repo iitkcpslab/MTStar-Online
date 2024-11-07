@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="ltl_rm" type="manager_node" name="manager_node" output="screen">
+            <!-- <remap from="dispatcher_plan" to="planner_req" /> -->
+        <param name="path_prefix" value="$(find ltl_rm)/include/ltl_rm/" />
+    </node>
+</launch>

@@ -1,0 +1,20 @@
+<package format="2">
+    <name>mrrp</name>
+    <version>0.0.0</version>
+    <description> mrrp </description>
+
+    <maintainer email="example@gmail.com">Gajendra Nagar</maintainer>
+
+    <license>TBD</license>
+
+    <buildtool_depend>catkin</buildtool_depend>
+    <buildtool_depend>catkin_simple</buildtool_depend>
+
+    <depend>nav_msgs</depend>
+    <depend>map_msgs</depend>
+    <depend>mrrtpe_msgs</depend>
+    <depend>roscpp</depend>
+    <depend>visualization_msgs</depend>
+    <depend>mrrtpe_utils</depend>
+    <depend>global_planner</depend>
+</package>

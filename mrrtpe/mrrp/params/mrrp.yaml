@@ -1,0 +1,5 @@
+robot_radius: 0.5 # [m] how much space to block near the robot path
+visual: true # [bool] enable path visualization
+rate: 0.2 # [hz] loop rate of mrrp
+robot_timeout: 3.0 # [sec] if robot last update is older than robot_timeout then no plan is generated for the robot
+waypoint_dist: 2.0 # [m] distance between waypoints, for the published mrrp plan
