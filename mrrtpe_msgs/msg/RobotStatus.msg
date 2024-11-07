@@ -1,0 +1,6 @@
+VehicleType vehicle_type
+BatteryStatus battery_status
+State state
+Path path
+bool anomaly_seen
+geometry_msgs/Point anomaly

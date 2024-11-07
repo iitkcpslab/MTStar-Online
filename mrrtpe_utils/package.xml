@@ -1,0 +1,20 @@
+<package format="2">
+    <name>mrrtpe_utils</name>
+    <version>0.0.1</version>
+    <description>mrrtpe_utils.</description>
+
+    <maintainer email="example@example.com">Gajendra Nagar</maintainer>
+    <maintainer email="example@example.com">Rohit</maintainer>
+
+    <license>none</license>
+
+    <!-- Dependencies which this package needs to build itself. -->
+    <buildtool_depend>catkin</buildtool_depend>
+    <buildtool_depend>catkin_simple</buildtool_depend>
+
+    <!-- Dependencies needed after this package is compiled. -->
+    <depend> roscpp </depend>
+    <depend> nav_msgs </depend>
+    <depend> sensor_msgs </depend>
+    <depend> mrrtpe_msgs </depend>
+</package>

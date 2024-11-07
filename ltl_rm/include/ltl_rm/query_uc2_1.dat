@@ -1,0 +1,1 @@
+/home/rotor/src/drdo_sim_ws/src/spot-2.6/bin/ltl2tgba --spin 'True && <>[]((<>p6 && <>p3) && []((p3->X(!p3 U p6)) && (p6->X(!p6 U p3))))'

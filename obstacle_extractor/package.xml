@@ -1,0 +1,17 @@
+<package format="2">
+    <name>obstacle_extractor</name>
+    <version>0.0.0</version>
+    <description> obstacle_extractor </description>
+
+    <maintainer email="example@gmail.com">Gajendra Nagar</maintainer>
+
+    <license>TBD</license>
+
+    <buildtool_depend>catkin</buildtool_depend>
+    <depend>nav_msgs</depend>
+    <depend>map_msgs</depend>
+    <depend>mrrtpe_msgs</depend>
+    <depend>roscpp</depend>
+    <depend>costmap_converter</depend>
+    <depend>visualization_msgs</depend>
+</package>

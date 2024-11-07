@@ -1,0 +1,6 @@
+[submodule "navigation"]
+	path = navigation
+	url = git@github.com:gajena/navigation.git
+[submodule "catkin_simple"]
+	path = catkin_simple
+	url = git@github.com:catkin/catkin_simple.git

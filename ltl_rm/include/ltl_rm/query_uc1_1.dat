@@ -1,0 +1,1 @@
+/home/rotor/src/drdo_sim_ws/src/spot-2.6/bin/ltl2tgba --spin 'True && <>[](<>p1 && <>p2 && <>p3 && <>p4)'

@@ -1,0 +1,3 @@
+bool anomaly_received
+VehicleType vehicle_type
+Path path

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+    <group ns="ugv_1">
+        <node pkg="obstacle_extractor" type="obstacle_extractor_node" name="obstacle_extractor" output="screen" >
+        <param name="cluster_max_distance" value="0.05" />
+        <param name="cluster_min_pts" value="30" />
+        <param name="cluster_max_pts" value="40" />
+        <param name="convex_hull_min_pt_separation" value="0.0" />
+        <param name="publish_marker" value="true"/>
+        </node>
+    </group>
+</launch>

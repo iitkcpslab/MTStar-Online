@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="mrrp" type="mrrp_node" name="mrrp_1" output="screen">
+        <rosparam file="$(find mrrp)/params/mrrp_costmap.yaml" command="load" ns="costmap" />
+        <rosparam file="$(find mrrp)/params/mrrp.yaml" command="load" />
+        <remap from="planner_req" to="planner_req_1"/>
+    </node>
+    <node pkg="mrrp" type="mrrp_node" name="mrrp_2" output="screen">
+        <rosparam file="$(find mrrp)/params/mrrp_costmap.yaml" command="load" ns="costmap" />
+        <rosparam file="$(find mrrp)/params/mrrp.yaml" command="load" />
+        <remap from="planner_req" to="planner_req_2"/>
+    </node>
+    <!-- Launch 3 node for 2nd use_case only -->
+    <node pkg="mrrp" type="mrrp_node" name="mrrp_3" output="screen">
+        <rosparam file="$(find mrrp)/params/mrrp_costmap.yaml" command="load" ns="costmap" />
+        <rosparam file="$(find mrrp)/params/mrrp.yaml" command="load" />
+        <remap from="planner_req" to="planner_req_3" />
+    </node>
+</launch>
